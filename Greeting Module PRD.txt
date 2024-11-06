@@ -1,0 +1,70 @@
+## Product Requirements Document (PRD)
+
+### Project Name
+Go Greet REST API
+
+### Overview
+The **Go Greet REST API** is a lightweight RESTful application designed in Go to demonstrate the creation of a simple API. This API will provide a greeting message in response to an HTTP GET request. The application will have a single endpoint, `/greet`, which returns a JSON response with a greeting message.
+
+### Objectives
+- Develop a RESTful API using Go that listens on a specified port.
+- Implement a single endpoint, `/greet`, that responds with a greeting message.
+- Ensure the API is lightweight, fast, and simple to deploy.
+
+### Requirements
+
+#### Functional Requirements
+1. **Endpoint**: `/greet`
+   - **Method**: `GET`
+   - **Response**: JSON object with a greeting message.
+   
+2. **Response Structure**:
+   - JSON response containing a greeting message.
+   - Example:
+     ```json
+     {
+       "message": "Hello, welcome to the Go Greet API!"
+     }
+     ```
+
+3. **Port Configuration**: The application should listen on port `8080` by default, but this should be configurable.
+
+#### Non-Functional Requirements
+1. **Performance**: The application should have a low response time for the greeting request.
+2. **Scalability**: Ensure the application is built in a way that can be easily scaled horizontally.
+3. **Code Quality**: Follow best practices for code structure and documentation in Go.
+4. **Error Handling**: The API should handle errors gracefully, with meaningful error messages and HTTP status codes.
+5. **Testing**: Provide unit tests for the `/greet` endpoint to verify it returns the correct message.
+
+### Implementation Details
+
+1. **Framework**: Use Go’s `net/http` package to handle HTTP requests.
+2. **Structure**: Follow a standard Go project structure with folders for `handlers`, `config`, and `main` functions.
+3. **Logging**: Include basic logging for incoming requests and any errors.
+4. **Environment Configuration**: Allow the port to be set through an environment variable.
+
+### Milestones
+
+1. **Project Setup**: Initialize the project structure and dependencies.
+2. **Endpoint Development**: Create the `/greet` endpoint with a hardcoded greeting message.
+3. **Configuration and Logging**: Add configuration for port and basic logging.
+4. **Testing**: Write unit tests for the `/greet` endpoint.
+5. **Documentation**: Document the code and provide a README with setup instructions.
+
+### Deliverables
+- Go application with `/greet` endpoint.
+- Configuration and logging setup.
+- Unit tests for the `/greet` endpoint.
+- README file with setup and usage instructions.
+
+### Example Usage
+After starting the application, a GET request to `http://localhost:8080/greet` should return:
+```json
+{
+  "message": "Hello, welcome to the Go Greet API!"
+}
+```
+
+---
+
+This PRD provides a basic plan to implement a REST API in Go with a simple greeting endpoint, focusing on simplicity, performance, and good coding practices.
